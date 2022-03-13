@@ -10,4 +10,4 @@ def getword():
     return random.choice(wordlist).rstrip('\n')
 
 def isvalid(word:str):
-    return word in validwordlist
+    return word+'\n' in validwordlist
