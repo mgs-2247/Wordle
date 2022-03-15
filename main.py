@@ -20,9 +20,9 @@ def wordle():
         elif guessed == actual:
             delay_print(colorify.colorit(guessed, actual)+f'\nYAAAAY YOU FOUND THE WORD. IT WAS {actual.upper()}'+ '\n')
             break
-        elif not wordgen.isvalid(guessed):
-            guesses -=1
-            print('The word you entered is not a valid word')
+        #elif not wordgen.isvalid(guessed):
+         #   guesses -=1
+          #  print('The word you entered is not a valid word')
         else:
             delay_print(colorify.colorit(guessed,actual)+'\n')
     if guesses>=6 and guessed != actual:
