@@ -1,31 +1,30 @@
-import colorify, wordgen, time, sys
+import colorify, wordgen, time, sys, wordle
 
 def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.10)
+        time.sleep(0.08)
 
-def wordle():
-    actual = wordgen.getword()
-    guesses = 0
-    print(actual)
-    print('You only have 6 tries to guess a five letter word. Good Luck! \n\n')
-    while guesses<6:
-        guesses +=1
-        guessed = input(f'Try {guesses}:  ')
-        if len(guessed)!=5:
-            guesses -=1
-            print('You must guess a 5-letter word!')       
-        elif guessed == actual:
-            delay_print(colorify.colorit(guessed, actual)+f'\nYAAAAY YOU FOUND THE WORD. IT WAS {actual.upper()}'+ '\n')
-            break
-        #elif not wordgen.isvalid(guessed):
-         #   guesses -=1
-          #  print('The word you entered is not a valid word')
-        else:
-            delay_print(colorify.colorit(guessed,actual)+'\n')
-    if guesses>=6 and guessed != actual:
-        print('Better luck next time!')
-
-wordle()
+def alpha():
+    command = True
+    while command:
+        command = input('''Welcome to Wordle!
+    What would you like to do?
+    0) Exit Game
+    1) Play
+    2) View stats
+    3) How to play?\n''')
+        if command == '0':
+            command = False
+        elif command == '1':
+            wordle.wordle()
+        elif command =='2':
+            print('Some boring stats')
+        elif command =='3':
+            print('Help goes here')
+        print('----------------------------------------------')
+        if input('Press any key to open the main menu. Enter 0 to exit\n') == '0':
+            command = False
+           
+alpha()

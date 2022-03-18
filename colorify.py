@@ -15,5 +15,5 @@ def colorit(guessed_word, word): #guessed word is the one guessed by the player 
             
         else:
             colors.append('red')
-        output = output + colored(gw[i].upper(), colors[i]) + '   '
+        output = output + colored(gw[i].upper(),colors[i]) + '   '
     return output
