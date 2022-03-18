@@ -8,6 +8,7 @@ def delay_print(s):
 
 def alpha():
     command = True
+    
     while command:
         command = input('''Welcome to Wordle!
     What would you like to do?

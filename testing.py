@@ -41,4 +41,6 @@ def main():
             ans=False
         print("-------------------------------------")
         input("Press any key.....")
-main()
+
+import re
+print(re.sub('s','r','start'))
