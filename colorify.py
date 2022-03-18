@@ -5,15 +5,12 @@ def colorit(guessed_word, word): #guessed word is the one guessed by the player 
     w = list(word)
     colors = []
     output = ''
-    resolved = []
-    for i in range(5):
-        if gw[i] == w[i]:
+    for index in range(5):
+        if gw[index] == w[index]:
             colors.append('green')
-            resolved.append(i)
-        elif gw[i] in w:
-            colors.append('yellow')
-            
+        elif gw[index] in w:
+            colors.append('yellow')          
         else:
             colors.append('red')
-        output = output + colored(gw[i].upper(),colors[i]) + '   '
+        output = output + colored(gw[index].upper(),colors[index]) + '   '
     return output

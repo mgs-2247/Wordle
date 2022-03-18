@@ -1,5 +1,5 @@
-from unittest import FunctionTestCase
-import colorify, wordgen, time, sys, wordle, helperfunctions
+
+import time, sys, wordle, helperfunctions
 
 def delay_print(s):
     for c in s:

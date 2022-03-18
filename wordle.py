@@ -1,5 +1,5 @@
 import imp
-import colorify, wordgen, time, sys, helperfunctions
+import colorify, time, sys, helperfunctions
 
 
 def delay_print(s):
@@ -9,10 +9,10 @@ def delay_print(s):
         time.sleep(0.01)
 
 def wordle():
-    actual = wordgen.getword()
+    actual = helperfunctions.getword()
     guesses = 0
     guessed_words = []
-    print(actual)
+    #print(actual)
     print('You only have 6 tries to guess a five letter word. You can quit the game at any time by entering 0.\n Good Luck! \n\n')
     while guesses<6:
         guesses +=1
@@ -22,9 +22,9 @@ def wordle():
             time.sleep(1)
             print('Exitted. Thanks for playing!')
             break
-        elif wordgen.isvalid(guessed,guessed_words)!='valid':
+        elif helperfunctions.isvalid(guessed,guessed_words)!='valid':
             guesses -=1
-            print(wordgen.isvalid(guessed,guessed_words))       
+            print(helperfunctions.isvalid(guessed,guessed_words))       
         elif guessed == actual:
             delay_print(colorify.colorit(guessed, actual)+'\n')
             print(f'\nYAAAAY YOU FOUND THE WORD. IT WAS {actual.upper()}'+'\n')
@@ -37,4 +37,3 @@ def wordle():
         helperfunctions.update('0')
         print('Better luck next time!')
     else:helperfunctions.update(str(guesses))
-
