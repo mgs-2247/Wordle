@@ -1,4 +1,4 @@
-import colorify, wordgen, time, sys, wordle
+import colorify, wordgen, time, sys, wordle, storage
 
 def delay_print(s):
     for c in s:
@@ -21,9 +21,9 @@ def alpha():
         elif command == '1':
             wordle.wordle()
         elif command =='2':
-            print('Some boring stats')
+            print(storage.stats())
         elif command =='3':
-            print('Help goes here')
+            print(storage.howtoplay())
         print('----------------------------------------------')
         if input('Press any key to open the main menu. Enter 0 to exit\n') == '0':
             command = False
