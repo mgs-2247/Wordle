@@ -18,7 +18,7 @@ def list_scores():
 
 def wins():
     data = open('database.txt', 'r').read()
-    match = re.search('(\d+) \| ((\d )+)', data)
+    match = re.search('(\d+) \| ((\d )*)', data)
     attempts = int(match.group(1))
     score_list = list_scores()
     loses = score_list.count('0')

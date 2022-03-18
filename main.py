@@ -1,4 +1,5 @@
-import colorify, wordgen, time, sys, wordle, storage
+from unittest import FunctionTestCase
+import colorify, wordgen, time, sys, wordle, helperfunctions
 
 def delay_print(s):
     for c in s:
@@ -21,9 +22,9 @@ def main():
         elif command == '1':
             wordle.wordle()
         elif command =='2':
-            print(storage.stats())
+            print(helperfunctions.stats())
         elif command =='3':
-            print(storage.howtoplay())
+            print(helperfunctions.howtoplay())
         print('----------------------------------------------')
         if input('Press any key to continue.....\n') == '0':
             command = False

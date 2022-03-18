@@ -1,4 +1,6 @@
-import colorify, wordgen, time, sys, storage
+import imp
+import colorify, wordgen, time, sys, helperfunctions
+
 
 def delay_print(s):
     for c in s:
@@ -32,7 +34,7 @@ def wordle():
             delay_print(colorify.colorit(guessed,actual)+'\n')
     
     if guesses>=6 and guessed != actual:
-        storage.update('0')
+        helperfunctions.update('0')
         print('Better luck next time!')
-    else:storage.update(str(guesses))
+    else:helperfunctions.update(str(guesses))
 
