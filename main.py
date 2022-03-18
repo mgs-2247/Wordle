@@ -6,7 +6,7 @@ def delay_print(s):
         sys.stdout.flush()
         time.sleep(0.08)
 
-def alpha():
+def main():
     command = True
     
     while command:
@@ -25,7 +25,7 @@ def alpha():
         elif command =='3':
             print(storage.howtoplay())
         print('----------------------------------------------')
-        if input('Press any key to open the main menu. Enter 0 to exit\n') == '0':
+        if input('Press any key to continue.....\n') == '0':
             command = False
            
-alpha()
+main()
